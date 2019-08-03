@@ -1,6 +1,6 @@
 <template>
    <div>
-      <h3>你是最帅的靓仔</h3>
+      <h3></h3>
    </div>
 </template>
 <script>
