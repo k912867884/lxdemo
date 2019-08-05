@@ -3,21 +3,24 @@
       <!-- 页头 -->
       <div>
          <router-link to="#">
-            <img style="width:11rem;" src="../../public/imgs/logo.png">
+            <img style="width:11rem;" src="../../src/assets/imgs/logo.png">
          </router-link>
          <span class="sp">美食</span>
-         <div class="san" @click="open">   
+         <div class="san" @click="open">
          </div>
       </div>
       <!-- 选择栏遮罩层 -->
       <ul v-if="mask==true" class="mask">
-         <li>首页</li>
-         <li>菜谱</li>
-         <li>商城</li>
-         <li>话题</li>
-         <li>健康</li>
-         <div class="fork"></div>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <li><router-link to="/Home" class="ziti">首页</router-link></li>
+         <div class="fork" @click="shut"></div>
       </ul>
+     
    </div>
 </template>
 <script>
@@ -29,11 +32,16 @@ export default {
    },methods:{
       open(){
          this.mask=true;
+      },
+      shut(){
+         this.mask=false;
       }
    }
 }
 </script>
 <style scoped>
+
+
 .contents{
    width:100%;
    padding:0.5rem;
@@ -78,14 +86,18 @@ export default {
    width:100%;
    height:40rem;
    list-style:none;
-   background:rgba(0,0,0,0.5)
+   background:rgba(0,0,0,0.5);
+   overflow:hidden;
 }
-.mask>li{
+/* 遮罩层字体 */
+.ziti{
+   display:block;
    width:100%;
    height:3rem;
    color:white;
    font-size:2rem;
    text-align:center;
+   text-decoration:none;
 }
 .fork{
    width:2rem;
