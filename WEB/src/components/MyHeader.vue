@@ -5,7 +5,7 @@
          <router-link to="#">
             <img style="width:11rem;" src="../../src/assets/imgs/logo.png">
          </router-link>
-         <span class="sp">美食</span>
+         <span class="sp">美食街</span>
          <div class="san" @click="open">
          </div>
       </div>
@@ -88,6 +88,7 @@ export default {
    list-style:none;
    background:rgba(0,0,0,0.5);
    overflow:hidden;
+   z-index:999;
 }
 /* 遮罩层字体 */
 .ziti{

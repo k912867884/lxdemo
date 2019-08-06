@@ -1,7 +1,5 @@
 <template>
    <div>
-      <!-- 头部 -->
-      <myheader></myheader>
       <!-- 底部导航栏 -->
       <mt-tabbar v-model="select" fixed>
          <mt-tab-item id="tab1"  @click.native="open(0)">
@@ -18,7 +16,7 @@
             :tu2='require("../assets/imgs/tubiao/cm0.png")'
             :panduan="panduan[1].s"
             ></imgs>
-            分类
+            推荐
          </mt-tab-item>
          <mt-tab-item id="tab3" @click.native="open(2)"> 
             <imgs
@@ -48,13 +46,15 @@
       <!-- 面板 -->
       <mt-tab-container v-model="select">
          <mt-tab-container-item id="tab1">
-            
+            <!-- 头部 -->
+            <myheader></myheader>
+            <panel></panel>
          </mt-tab-container-item>
          <mt-tab-container-item id="tab2">
-            面板2
+            <panel2></panel2>
          </mt-tab-container-item>
          <mt-tab-container-item id="tab3">
-            面板3
+            <panel3></panel3>
          </mt-tab-container-item>
          <mt-tab-container-item id="tab4">
             面板4
@@ -63,12 +63,18 @@
             面板5
          </mt-tab-container-item>
       </mt-tab-container>
+      
    </div>
 </template>
 <script>
 "use strict"
-import MyHeader from "../components/MyHeader"
-import Imgs from "./Imgs"
+
+
+import Panel from "../components/Panel"//引入面板1
+import Panel2 from "../components/Panel2"
+import Panel3 from "../components/Panel3"
+import MyHeader from "../components/MyHeader"//引入页头
+import Imgs from "./Imgs" //底部导航栏图片
 export default {
    data(){
       return{
@@ -77,8 +83,7 @@ export default {
       }
    },
    created(){
-      this.select=this.$route.name;
-      //console.log(this.$route.name);
+      
    },
    methods:{
       open(n){
@@ -93,7 +98,10 @@ export default {
    },
   components:{
      "imgs":Imgs,
-     "myheader":MyHeader
+     "myheader":MyHeader,
+     "panel":Panel,
+     "panel2":Panel2,
+     "panel3":Panel3
    }
 }
 </script>

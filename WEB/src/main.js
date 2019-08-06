@@ -9,7 +9,6 @@ import MintUI from "mint-ui"
 import "mint-ui/lib/style.css"
 //将mint-ui注册vue
 Vue.use(MintUI)
-
 Vue.prototype.axios=axios;
 Vue.config.productionTip = false
 
